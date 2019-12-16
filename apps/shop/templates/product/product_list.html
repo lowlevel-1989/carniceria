@@ -1,0 +1,44 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+{% block content %}
+
+<br />
+<div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid">
+	<div class="cbp-vm-options">
+		<a href="#" class="cbp-vm-icon cbp-vm-grid cbp-vm-selected" data-view="cbp-vm-view-grid" title="grid">Grid View</a>
+		<a href="#" class="cbp-vm-icon cbp-vm-list" data-view="cbp-vm-view-list" title="list">List View</a>
+	</div>
+	<div class="clearfix"></div>
+	<ul>
+		{% for product in object_list %}
+		<li>
+		<a class="cbp-vm-image" href="{% url 'product_detail' product.pk %}">
+			<div class="view view-first">
+				<div class="inner_content clearfix">
+					<div class="product_image">
+						<img src="{{ product.cover.url }}" class="img-responsive" alt=""/>
+						<div class="mask">
+							<div class="info">Quick View</div>
+						</div>
+						<div class="product_container">
+							<div class="cart-left">
+								<p class="title">{{ product.name }}</p>
+							</div>
+							<div class="price">{{ product.price }} COP</div>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</a>
+		</li>
+		{% empty %}
+			<li class="col-sm-12">No hay articulos todavia.</li>
+		{% endfor %}
+	</ul>
+</div>
+
+<script src="{% static 'core/js/cbpViewModeSwitch.js' %}" type="text/javascript"></script>
+<script src="{% static 'core/js/classie.js' %}" type="text/javascript"></script>
+{% endblock content %}
