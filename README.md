@@ -39,7 +39,7 @@ DATABASES = {
 'django.db.backends.oracle'
 ~~~
 
-## CREATE ESTRUCTURE DATABASE
+## CREATE STRUCTURE DATABASE
 ~~~
 $ python manage.py migrate
 ~~~
