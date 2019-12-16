@@ -61,5 +61,5 @@ $ python manage.py runserver
 	http://web.com/?name__contains=fgfdg
 
 	http://web.com/?category__id=1
-	http://web.com/>category__name=sadsad
+	http://web.com/?category__name=sadsad
 ~~~
