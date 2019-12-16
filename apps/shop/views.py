@@ -1,19 +1,12 @@
-import hashlib
 from decimal import Decimal
-from django.http import Http404
-from django.urls import reverse
 from django.views.generic import ListView, DetailView
 from django.shortcuts import redirect
 from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.mixins import AccessMixin
-from django.utils.decorators import method_decorator
-from django.views.decorators.csrf import csrf_exempt
 from carton.cart import Cart
-from django.contrib import messages
 from apps.product.models import Product
 from apps.product.filters import ProductFilter
-from apps.ticket.models import Ticket, Status
+from apps.ticket.models import Ticket
 
 
 class ProductListView(ListView):
