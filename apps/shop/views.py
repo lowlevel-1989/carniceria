@@ -10,12 +10,21 @@ from django.contrib.auth.mixins import AccessMixin
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from carton.cart import Cart
-from apps.product.models import Product
-from apps.ticket.models import Ticket, Status
 from django.contrib import messages
+from apps.product.models import Product
+from apps.product.filters import ProductFilter
+from apps.ticket.models import Ticket, Status
+
 
 class ProductListView(ListView):
     model = Product
+
+    def get_queryset(self):
+        return ProductFilter(
+                    self.request.GET,
+                    queryset=super().get_queryset()
+        ).qs
+
 
 class ProductDetailView(DetailView):
     model = Product
