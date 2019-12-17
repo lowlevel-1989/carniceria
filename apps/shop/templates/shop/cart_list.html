@@ -21,7 +21,7 @@
 		{% for item in cart.items %}
 		<tr>
 			<td>{{ item.product.name }}</td>
-			<td>{{ item.product.price }} COP</td>
+			<td>{{ item.product.price }} €</td>
 			<td>{{ item.quantity }}</td>
 			<td>{{ item.subtotal }}</td>
 			<td>
@@ -37,7 +37,7 @@
 			<div class="col-sm-12">No hay articulos todavia.</div>
 		{% endfor %}
 		<tr>
-			<td class="align-right" colspan="3"><strong>total:<strong> {{ cart.total }} COP</td>
+			<td class="align-right" colspan="3"><strong>total:<strong> {{ cart.total }} €</td>
 		</tr>
 	</tbody>
 </table>
