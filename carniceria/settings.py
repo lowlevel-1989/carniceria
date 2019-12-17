@@ -134,6 +134,7 @@ MEDIA_URL = '/media/'
 
 
 LOGIN_REDIRECT_URL='/'
+LOGOUT_REDIRECT_URL='/'
 
 CART_PRODUCT_MODEL = 'apps.product.models.Product'
 

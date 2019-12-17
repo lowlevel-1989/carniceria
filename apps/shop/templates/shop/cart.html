@@ -5,8 +5,13 @@
 <div class="apparel_box">
 
 	<ul class="login">
-		<li class="login_text"><a href="{% url 'login' %}">Login</a></li>
-		<li class="wish"><a href="{% url 'carton' %}">Wish List</a></li>
+
+		{% if request.user.is_authenticated %}
+			<li class="login_text"><a href="{% url 'logout' %}">Logout</a></li>
+		{% else %}
+			<li class="login_text"><a href="{% url 'login' %}">Login</a></li>
+		{% endif %}
+		<li class="wish">{{ request.user.username }}</li>
 		<div class='clearfix'></div>
 	</ul>
 
@@ -25,14 +30,12 @@
 					<input type="image" src="{% static 'core/images/close.png' %}" />
 				</form>
 			</li>
-			<li><a href="{% url 'carton' %}">Edit</a></li>
 		</ul>
 		<div class='clearfix'></div>
 	</div>
 
 	<ul class="quick_access">
 		<li class="view_cart"><a href="{% url 'carton' %}">View Cart</a></li>
-		<li class="check"><a href="{% url 'carton' %}">Checkout</a></li>
 		<div class='clearfix'></div>
 	</ul>
 
