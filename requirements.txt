@@ -3,3 +3,7 @@ pytz==2019.3
 Pillow==6.2.1
 https://github.com/formatcom/django-carton/zipball/master#egg=django-carton
 django-filter==2.2.0
+pyparsing==2.4.5
+pydot==1.4.1
+django-extensions==2.2.5
+django-debug-toolbar==2.1
