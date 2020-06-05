@@ -1,4 +1,4 @@
-Django==3.0.3
+Django==3.0.7
 pytz==2019.3
 Pillow==6.2.1
 https://github.com/formatcom/django-carton/zipball/master#egg=django-carton
